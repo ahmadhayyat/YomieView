@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+
+    <LinearLayout
+        android:id="@+id/mediaIdsLL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/mediaPlayerId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/playerId"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/mediaClaimId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/claimId"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/mediaMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/prgMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white" />
+
+        <ProgressBar
+            android:id="@+id/mediaPb"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/appLogo"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/icon"
+        app:layout_constraintBottom_toTopOf="@id/mediaIdsLL"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/syncRl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bg_left_curved"
+        android:backgroundTint="@color/blue"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="5dp"
+        android:paddingEnd="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/syncIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:src="@drawable/ic_sync" />
+
+        <TextView
+            android:id="@+id/syncTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@string/app_name"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

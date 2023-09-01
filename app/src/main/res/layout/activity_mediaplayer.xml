@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:fitsSystemWindows="true"
+    tools:context=".MediaPlayerActivity">
+
+    <RelativeLayout
+        android:id="@+id/play_outRl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <FrameLayout
+            android:id="@+id/mediaPlayerFL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black" />
+
+        <RelativeLayout
+            android:id="@+id/altMsgRl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/greyLight"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/altMsgTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/rounded_blue_bg"
+                android:padding="25dp"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/syncRl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_left_curved"
+            android:backgroundTint="@color/blue"
+            android:elevation="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="5dp"
+            android:paddingEnd="0dp">
+
+            <ImageView
+                android:id="@+id/syncIv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/sync_icon"
+                android:padding="3dp"
+                android:src="@drawable/ic_sync" />
+
+            <TextView
+                android:id="@+id/syncTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/app_name"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/noPlay_outRl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/appLogo"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:layout_above="@id/mediaIdsLL"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/icon" />
+
+            <LinearLayout
+                android:id="@+id/mediaIdsLL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/mediaPlayerId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/playerId"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/mediaClaimId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/claimId"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/mediaMsg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rssParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/html_viewer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#80000000"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:fontFamily="@font/pt_sans_narrow_regular"
+            android:gravity="center_vertical"
+            android:layerType="software"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/tickerLogo"
+            android:layout_width="32dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/bg_right_curved_0_5"
+            android:contentDescription="@string/app_name"
+            android:paddingStart="0dp"
+            android:paddingEnd="3dp"
+            android:src="@drawable/yomie50" />
+    </RelativeLayout>
+
+    <TextClock
+        android:id="@+id/dClock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/bg_left_curved_0_5"
+        android:gravity="center_vertical"
+        android:paddingStart="3dp"
+        android:paddingEnd="3dp"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/dTapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
